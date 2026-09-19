@@ -56,6 +56,12 @@ async def github_webhook(request: Request):
     print("Target Branch:", pr["base"]["ref"])
 
 
+class Trave(BaseModel):
+    message: str
+    thread_id: str | None = None
+
+
+
 
 @app.post("/api/travel")
 async def travel_planner(request_data: TravelRequest):
