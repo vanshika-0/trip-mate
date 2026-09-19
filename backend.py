@@ -77,6 +77,11 @@ class yeahState(TypedDict):
     llm_calls: int
 
 
+llm33 = ChatGroq(
+    model=GROQ_MODEL,
+    api_key=GROQ_API_KEY
+)
+
 
 # =========================
 # Flight Agent
