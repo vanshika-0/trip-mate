@@ -80,7 +80,7 @@ async def travel_planner(request_data: TravelRequest):
         )
 
 
-@app.post("/api/travel2")
+@app.post("/api/travel3")
 async def travel_planner(request_data: TravelRequest):
     try:
         user_message = request_data.message.strip()
