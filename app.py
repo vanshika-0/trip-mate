@@ -39,7 +39,7 @@ class TravelRequest(BaseModel):
 @app.post("/api/travel")
 async def travel_planner(request_data: TravelRequest):
     try:
-        user_message = request_data.message.strip()
+        user_mesage = request_data.message.strip()
 
         if not user_message:
             return JSONResponse(
