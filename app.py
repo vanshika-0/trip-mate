@@ -35,8 +35,7 @@ class TravelRequest(BaseModel):
     thread_id: str | None = None
 
 
-
-class Trav(BaseModel):
+class riya(BaseModel):
     message: str
     thread_id: str | None = None
 
