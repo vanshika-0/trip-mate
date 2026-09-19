@@ -331,6 +331,40 @@ def find_location_mentions(query: str):
     return unique_mentions
 
 
+
+def find_location(query: str):
+    """
+    Finds country or city names inside a natural language query.
+    """
+
+    q = query.lower()
+    mentions = []
+
+    # Country aliases
+    for alias in COUNTRY_ALIASES:
+        if re.search(rf"\b{re.escape(alias)}\b", q):
+            mentions.append(alias)
+
+    # Country names from pycountry
+    for country in pycountry.countries:
+        name = country.name.lower()
+        if len(name) >= 4 and re.search(rf"\b{re.escape(name)}\b", q):
+            mentions.append(name)
+
+    # City names from our preferred city map
+    for city in CITY_MAIN_AIRPORT:
+        if re.search(rf"\b{re.escape(city)}\b", q):
+            mentions.append(city)
+
+    # Remove duplicate while keeping order
+    unique_mentions = []
+    for item in mentions:
+        if item not in unique_mentions:
+            unique_mentions.append(item)
+
+    return unique_mentions
+
+
 def parse_route(query: str):
     """
     Returns:
