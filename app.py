@@ -36,6 +36,12 @@ class TravelRequest(BaseModel):
 
 
 
+class Trav(BaseModel):
+    message: str
+    thread_id: str | None = None
+
+
+
 @app.post("/api/travel")
 async def travel_planner(request_data: TravelRequest):
     try:
