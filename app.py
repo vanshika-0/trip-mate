@@ -137,6 +137,11 @@ def start():
         "message":"Backend is running."
     }
 
+def annu():
+    return 
+        "message":"Backend is running."
+    }
+
 
 if __name__ == "__main__":
     uvicorn.run(
