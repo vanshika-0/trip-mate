@@ -34,6 +34,27 @@ class TravelRequest(BaseModel):
     message: str
     thread_id: str | None = None
 
+async def github_webhook(request: Request):
+
+    data = await request.json()
+
+    pr = data["pull_request"]
+
+    repo_name = data["repository"]["full_name"]
+    pr_number = pr["number"]
+    source_branch = pr["head"]["ref"]
+    target_branch = pr["base"]["ref"]
+    pr_title = pr["title"]
+
+    print("\n===== PR INFORMATION =====")
+
+    print("Repository:", repo_name)
+    print("PR Number:", pr_number)
+    print("Title:", pr["title"])
+    print("Description:", pr["body"])
+    print("Source Branch:", pr["head"]["ref"])
+    print("Target Branch:", pr["base"]["ref"])
+
 
 
 @app.post("/api/travel")
@@ -129,6 +150,23 @@ async def travel_planner(request_data: TravelRequest):
 @app.get("/")
 def start():
     return {
+        "message":"Backend is running."
+    }
+
+def annu():
+    return 
+        "message":"Backend is running."
+    }
+
+
+def paras():
+    return 
+        "message":"Backend is running."
+    }
+
+
+def dady():
+    return 
         "message":"Backend is running."
     }
 
