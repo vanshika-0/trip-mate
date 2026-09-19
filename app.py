@@ -89,7 +89,7 @@ async def travel_planner(request_data: TravelRequest):
             return JSONResponse(
                 status_code=400,
                 content={
-                    "success": False,
+                    "success": True,
                     "error": "Message cannot be empty."
                 }
             )
