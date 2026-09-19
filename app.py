@@ -149,6 +149,12 @@ def paras():
     }
 
 
+def dady():
+    return 
+        "message":"Backend is running."
+    }
+
+
 if __name__ == "__main__":
     uvicorn.run(
         "app:app",
