@@ -31,6 +31,17 @@ BASE_URL = "https://api.aviationstack.com/v1/flights"
 AIRPORTS = airportsdata.load("IATA")
 
 
+COUNTRY_ALIASES = {
+    "usa": "US",
+    "u.s.a": "US",
+    "u.s.": "US",
+    "america": "US",
+    "united states": "US",
+    "uk": "GB",
+    "u.k.": "GB",
+    "britain": "GB"}
+
+
 
 COUNTRY_ALIASES = {
     "usa": "US",
